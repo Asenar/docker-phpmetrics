@@ -1,20 +1,11 @@
-FROM php:8.1-cli-alpine
+FROM php:8.4-cli-alpine
 
-MAINTAINER pierreboissinot <pierre.boissinot@lephare.com>
+LABEL org.opencontainers.image.authors="herloct@gmail.com"
 
 ENV PHP_METRICS_VERSION=2.8.1
 
 # @link https://stackoverflow.com/questions/44097266/add-yaml-extension-to-php-on-using-official-alpine-docker-image
-ENV PHPIZE_DEPS \
-    git \
-    file \
-    re2c \
-    autoconf \
-    make \
-    zlib \
-    zlib-dev \
-    g++ \
-    yaml-dev
+ENV PHPIZE_DEPS="git file re2c autoconf make zlib zlib-dev g++ yaml-dev"
 
 RUN set -xe; \
     apk add --update --no-cache --virtual .build-deps ${PHPIZE_DEPS}; \
