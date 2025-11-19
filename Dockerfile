@@ -1,6 +1,6 @@
-FROM php:8.1-cli-alpine
+FROM php:8.4-cli-alpine
 
-MAINTAINER pierreboissinot <pierre.boissinot@lephare.com>
+LABEL pierreboissinot <pierre.boissinot@lephare.com>
 
 ENV PHP_METRICS_VERSION=2.8.1
 
